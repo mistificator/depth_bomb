@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://StaticObject.gd" type="Script" id=1]
+
+[node name="StaticObject" type="StaticBody2D"]
+position = Vector2( -1.54758, -30.1774 )
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+
+[node name="Polygon" type="Polygon2D" parent="."]
+visible = false
+
+[node name="Tooltip" type="RichTextLabel" parent="."]
+visible = false
+margin_right = 100.0
+margin_bottom = 20.0
+[connection signal="mouse_entered" from="." to="." method="_on_StaticObject_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_StaticObject_mouse_exited"]
